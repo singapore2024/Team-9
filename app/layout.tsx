@@ -17,8 +17,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "MGDT",
-  description: "Metropolitan Green Design & Technology",
+  title: "Farmers Connect",
+  description: "Farmers Connect",
 };
 
 export default function RootLayout({

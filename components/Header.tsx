@@ -15,6 +15,7 @@ function Navbar() {
         <div className="flex-shrink-0">
           <a href="/" className="flex items-center">
             <img src="/gdmt.png" alt="Logo" className="h-8" />
+            <h1>Farmers Connect</h1>
           </a>
         </div>
 
