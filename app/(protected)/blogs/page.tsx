@@ -127,7 +127,7 @@ export default async function Blogs() {
             />
           </div>
           <h3>About the Kit</h3>
-          <DialogDescription>
+          <DialogDescription className="text-base">
             Our starter kit has everything you need to embark on your
             plant-growing adventure, even if you’ve never touched a plant
             before. It includes a curated selection of seeds, nutrient-rich
@@ -138,7 +138,7 @@ export default async function Blogs() {
             start a garden, this kit has you covered.
           </DialogDescription>
           <h3>Consistency is Key</h3>
-          <DialogDescription>
+          <DialogDescription className="text-base">
             When it comes to growing plants, regular care is crucial. That’s why
             we’ve designed the kit with a simple yet effective watering and
             maintenance schedule that anyone can follow. By sticking to these
@@ -149,7 +149,7 @@ export default async function Blogs() {
             how rewarding plant care can be!
           </DialogDescription>
           <h3>Become a Certified Farmer</h3>
-          <DialogDescription>
+          <DialogDescription className="text-base">
             This kit isn’t just about growing plants—it's about growing your
             skills as a budding gardener. By following the instructions and
             getting hands-on experience, you'll build a deeper understanding of
