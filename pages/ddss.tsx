@@ -28,14 +28,6 @@ import {
 
 export const description = "A multiple line chart with selectable vegetable"
 
-const chartData = [
-  { month: "January", desktop: 186, mobile: 80 },
-  { month: "February", desktop: 305, mobile: 200 },
-  { month: "March", desktop: 237, mobile: 120 },
-  { month: "April", desktop: 73, mobile: 190 },
-  { month: "May", desktop: 209, mobile: 130 },
-  { month: "June", desktop: 214, mobile: 140 },
-]
 
 const chartConfig = {
   desktop: {
@@ -54,14 +46,47 @@ const vegetables = [
   { value: "Lettuce", label: "Lettuce" },
 ]
 
+type VegetableData = {
+  [key: string]: { month: string; desktop: number; mobile: number }[];
+};
+
+const vegetableData: VegetableData = {
+  "Bak-choy": [
+    { month: "January", desktop: 150, mobile: 100 },
+    { month: "February", desktop: 220, mobile: 180 },
+    { month: "March", desktop: 130, mobile: 90 },
+    { month: "April", desktop: 175, mobile: 110 },
+    { month: "May", desktop: 200, mobile: 140 },
+    { month: "June", desktop: 190, mobile: 150 },
+  ],
+  "Spinach": [
+    { month: "January", desktop: 300, mobile: 150 },
+    { month: "February", desktop: 290, mobile: 160 },
+    { month: "March", desktop: 280, mobile: 190 },
+    { month: "April", desktop: 270, mobile: 180 },
+    { month: "May", desktop: 265, mobile: 170 },
+    { month: "June", desktop: 250, mobile: 175 },
+  ],
+  "Lettuce": [
+    { month: "January", desktop: 80, mobile: 60 },
+    { month: "February", desktop: 95, mobile: 85 },
+    { month: "March", desktop: 105, mobile: 75 },
+    { month: "April", desktop: 115, mobile: 90 },
+    { month: "May", desktop: 130, mobile: 100 },
+    { month: "June", desktop: 140, mobile: 110 },
+  ],
+};
+
 export function DemandSupplyGraph() {
-  const [selectedVegetable, setSelectedVegetable] = useState("Bak-choy")
+  const [selectedVegetable, setSelectedVegetable] = useState("Bak-choy");
+
+  const chartData:any = vegetableData[selectedVegetable];
 
   return (
     <Card>
       <CardHeader>
         <div className="flex justify-between items-center">
-          <CardTitle>Demand and Supply Graph - {selectedVegetable }</CardTitle>
+          <CardTitle>Demand and Supply Graph - {selectedVegetable}</CardTitle>
           <Select value={selectedVegetable} onValueChange={setSelectedVegetable}>
             <SelectTrigger className="w-[180px]">
               <SelectValue placeholder="Select vegetable" />
@@ -92,7 +117,7 @@ export function DemandSupplyGraph() {
             }}
           >
             <CartesianGrid vertical={false} />
-            
+
             <XAxis
               dataKey="month"
               tickLine={false}
@@ -102,18 +127,18 @@ export function DemandSupplyGraph() {
             >
               <Label value="Month" offset={-20} position="insideBottom" />
             </XAxis>
-            
+
             <YAxis>
               <Label
                 value="Amount of Vegetables (kg)"
                 angle={-90}
                 position="insideLeft"
-                style={{ textAnchor: 'middle' }}
+                style={{ textAnchor: "middle" }}
               />
             </YAxis>
-            
+
             <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
-            
+
             <Line
               dataKey="desktop"
               type="monotone"
@@ -121,7 +146,7 @@ export function DemandSupplyGraph() {
               strokeWidth={2}
               dot={false}
             />
-            
+
             <Line
               dataKey="mobile"
               type="monotone"
@@ -133,5 +158,5 @@ export function DemandSupplyGraph() {
         </ChartContainer>
       </CardContent>
     </Card>
-  )
+  );
 }
