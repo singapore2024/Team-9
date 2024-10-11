@@ -14,11 +14,12 @@ export default async function ProtectedLayout({
 
   return (
     <main className="min-h-screen bg-white text-black">
-      <div className="grid grid-cols-12">
-        <div className="col-span-2">
-          <Sidebar/>
+      {/* Flex layout for responsiveness */}
+      <div className="flex flex-col md:flex-row">
+        <div className="w-full md:w-64 flex-shrink-0">
+          <Sidebar />
         </div>
-        <div className="container col-span-10">
+        <div className="flex-1 p-4 overflow-auto">
           {children}
         </div>
       </div>
