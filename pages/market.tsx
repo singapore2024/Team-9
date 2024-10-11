@@ -26,7 +26,7 @@ export function CardWithForm({type = "barter", imageUrl, name, price, descriptio
       <CardHeader>
         <div className="relative">
           <img
-            src="https://www.shutterstock.com/image-vector/identity-business-corporate-souvenir-promotion-260nw-1444852277.jpg"
+            src="https://quanfaorganic.com.sg/cdn/shop/products/ketobox_1.jpg?v=1705308414"
             alt="Bicycle"
             className="w-full h-[200px] object-cover rounded"
           />
@@ -44,7 +44,10 @@ export function CardWithForm({type = "barter", imageUrl, name, price, descriptio
           <p className="text-sm text-gray-600">Lightly used</p>
         </div>
       </CardContent>
-     
+      <CardFooter className="flex justify-between">
+        <Button variant="outline" >Like</Button>
+        <Button className="bg-green-500">{type==="buy" ? "Buy" : "Barter"}</Button>
+      </CardFooter>
     </Card>
   );
 }

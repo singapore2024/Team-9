@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
-import { Activity, BarChart, ShieldAlert, LogOut } from "lucide-react";
+import { Activity, ChartNoAxesCombined, User, LogOut, Store, MessageCircleMore } from "lucide-react";
 import React, { useState } from "react";
 
 export default function Sidebar() {
@@ -12,9 +12,10 @@ export default function Sidebar() {
 
   // Define your sidebar items directly here
   const sidebarItems = [
-    { name: "Home", path: "/home", icon: <BarChart className="h-5 w-5" /> },
-    { name: "Settings", path: "/settings", icon: <Activity className="h-5 w-5" /> },
-    { name: "About", path: "/about", icon: <ShieldAlert className="h-5 w-5" /> },
+    { name: "Dashboard", path: "/dashboard", icon: <ChartNoAxesCombined className="h-5 w-5" /> },
+    { name: "Blogs", path: "/blogs", icon: <MessageCircleMore className="h-5 w-5" /> },
+    { name: "Marketplace", path: "/marketplace", icon: <Store className="h-5 w-5" /> },
+    { name: "Profile", path: "/profile", icon: <User className="h-5 w-5" /> }
   ];
 
   const handleSignOut = async () => {
@@ -84,3 +85,4 @@ export default function Sidebar() {
     </div>
   );
 }
+
