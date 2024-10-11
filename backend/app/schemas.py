@@ -10,18 +10,19 @@ class ListingCreate(BaseModel):
     quantity: float
     type: str
     price: Optional[str] = None
-    unit: Optional[str] = "kg"  # Default unit is kg
+    unit: Optional[str] = "kg"
+    filepath: Optional[str] = None
 
 class Listing(ListingCreate):
     id: Optional[str] = None 
 
 
 class OfferCreate(BaseModel):
-    listing_id: str  # Reference to the Listing ID (as a string for MongoDB compatibility)
+    listing_id: str 
     proposed_quantity: float
     proposed_item: str
-    message: Optional[str] = None  # Optional message describing the offer
+    message: Optional[str] = None 
 
 class OfferResponse(OfferCreate):
-    id: Optional[str] = None  # MongoDB _id will be stored here as a string
+    id: Optional[str] = None 
     user_id: Optional[str] = None 
