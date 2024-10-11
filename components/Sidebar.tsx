@@ -11,7 +11,11 @@ import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 
-export default function Sidebar() {
+interface SidebarProps { 
+  name: string;
+}
+
+export default function Sidebar({ name }: SidebarProps) {
   const pathname = usePathname();
   const router = useRouter();
   const [isSigningOut, setIsSigningOut] = useState(false);
@@ -59,13 +63,13 @@ export default function Sidebar() {
   };
 
   return (
-    <div className="flex h-screen w-64 flex-col justify-between rounded-r-lg border-r-[1px] bg-white p-6 text-blue-950">
+    <div className="flex h-screen w-64 flex-col justify-between rounded-r-lg border-r-[1px] bg-white p-6 text-green-950">
       {/* Logo */}
       <div className="mb-8 flex items-center">
         <div className="rounded-full bg-white p-2">
-          <Image src="/logo.png" alt="Logo" height={40} width={40} />
+          <Image src="/gdmt.png" alt="Logo" height={40} width={40} />
         </div>
-        <h1 className="ml-3 text-lg font-semibold">User Account</h1>
+        <h1 className="ml-3 text-lg font-semibold">{`Welcome, ${name}`}</h1>
       </div>
 
       {/* Sidebar items */}
@@ -74,15 +78,15 @@ export default function Sidebar() {
           <div
             key={item.name}
             className={`group mb-4 flex cursor-pointer items-center gap-3 rounded-lg p-3 transition-colors ${
-              item.path === pathname ? "bg-blue-950" : "bg-white"
-            } hover:bg-blue-950`}
+              item.path === pathname ? "bg-green-900" : "bg-white"
+            } hover:bg-green-900`}
             onClick={() => router.push(item.path)}
           >
             <span
               className={`${
                 item.path === pathname
                   ? "text-white"
-                  : "text-blue-950 group-hover:text-white"
+                  : "text-green-900 group-hover:text-white"
               }`}
             >
               {item.icon}
@@ -91,7 +95,7 @@ export default function Sidebar() {
               className={`${
                 item.path === pathname
                   ? "text-white"
-                  : "text-blue-950 group-hover:text-white"
+                  : "text-green-900 group-hover:text-white"
               }`}
             >
               {item.name}

@@ -71,7 +71,7 @@ const BuyForm: React.FC<BuyFormProps> = ({ transactionType, onClose }) => {
             </>
           )}
           
-          <Button type="submit" className="w-full bg-blue-950 text-white">
+          <Button type="submit" className="w-full bg-green-900 text-white">
             {transactionType === 'buy' ? "Confirm" : "Submit Barter Request"}
           </Button>
         </div>
