@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { auth } from "@/auth";
 import Sidebar from "@/components/Sidebar";
+import { ChatbotLauncher } from "@/components/ChatbotLauncher";
 
 export default async function ProtectedLayout({
   children,
@@ -25,6 +26,7 @@ export default async function ProtectedLayout({
           {children}
         </div>
       </div>
+      <ChatbotLauncher />
     </main>
   );
 }
