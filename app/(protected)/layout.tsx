@@ -14,11 +14,11 @@ export default async function ProtectedLayout({
 
   return (
     <main className="min-h-screen bg-white text-black">
-      <div className="grid grid-cols-12">
-        <div className="col-span-2">
+      <div className="grid grid-cols-12 gap-4 ">
+        <div className="col-span-2 ">
           <Sidebar/>
         </div>
-        <div className="container col-span-10">
+        <div className="col-span-10 px-10">
           {children}
         </div>
       </div>

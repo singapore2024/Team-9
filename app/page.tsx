@@ -10,22 +10,7 @@ import { signOut } from "@/auth";
 export default async function Home() {
   const router = useRouter();
   
-  // if (session) {
-  //   return (
-  //     <div>
-  //       <p>Signed in as {session.user?.email}</p>
-  //       {/* <form
-  //         action={async () => {
-  //           "use server"
-  //           await signOut()
-  //           }}
-  //         >
-  //         <button type="submit">Sign Out</button>
-  //       </form> */}
-  //     </div>
-  //   );
-  // }
-    
+ 
     
 
   return (
