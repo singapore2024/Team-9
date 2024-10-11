@@ -1,5 +1,9 @@
 import BlogCard from "@/components/BlogCard";
 import Header from "@/components/Header";
+import Image from "next/image";
+import { ChatbotLauncher } from "@/components/ChatbotLauncher"; // Ensure the correct path
+import { auth } from "@/auth";
+import { signOut } from "@/auth";
 
 export default async function Home() {
   // const router = useRouter();
@@ -64,6 +68,8 @@ export default async function Home() {
           ></BlogCard>
         ))}
       </div>
+      {/* Chatbot Launcher Button */}
+      <ChatbotLauncher />
     </div>
   );
 }

@@ -5,19 +5,31 @@ import { Button } from "@/components/ui/button";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import AddListingForm from '@/components/AddListingForm';
 import { CardWithForm } from '@/pages/market';
+import BuyForm from '@/components/BuyForm';
 
 const Marketplace = () => {
-  const [view, setView] = useState<'barter' | 'sell'>('barter'); // Track selected view
-  const [isModalOpen, setIsModalOpen] = useState(false); // Track modal visibility
+  const [view, setView] = useState<'barter' | 'buy'>('barter');
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isBuyModalOpen, setIsBuyModalOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState<{ type: string; name: string; price?: string } | null>(null);
+  const [transactionType, setTransactionType] = useState<'buy' | 'barter'>('barter');
 
-  const handleAddListingClick = () => {
-    setIsModalOpen(true); // Show the form modal
+  const handleOpenBuyBarterModal = (data: { type: string; name: string; price?: string }) => {
+    setTransactionType(data.type as 'buy' | 'barter'); // Set transaction type
+    setSelectedItem(data); // Set the selected item data
+    setIsBuyModalOpen(true);
+  };
+  const handleCloseBuyBarterModal = () => { 
+    setIsBuyModalOpen(false);
+  }
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
   };
 
   const handleCloseModal = () => {
-    setIsModalOpen(false); // Close the form modal
+    setIsModalOpen(false);
   };
- 
 
   const exampleCards = [
     {
@@ -50,9 +62,6 @@ const Marketplace = () => {
 
   const filteredCards = exampleCards.filter(card => card.type === view);
 
- 
-
-
   return (
     <div className="p-6">
       {/* Header and Toggle Group */}
@@ -74,7 +83,7 @@ const Marketplace = () => {
             aria-selected={view === 'buy'}
             onClick={() => setView('buy')}
           >
-            Sell
+            Buy
           </ToggleGroupItem>
         </ToggleGroup>
       </div>
@@ -83,13 +92,13 @@ const Marketplace = () => {
       <div className="flex items-center mb-6 space-x-4">
         <Input type="text" placeholder="Search listings..." className="flex-1" />
         
-        <Button className="bg-blue-950 text-white px-4 py-2 rounded-md" onClick={handleAddListingClick}>
+        <Button className="bg-blue-950 text-white px-4 py-2 rounded-md" onClick={handleOpenModal}>
           Add Listing
         </Button>
       </div>
       
-      {/* Placeholder for listings */}
-      <div className=" p-10">
+      {/* Cards */}
+      <div className="p-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {filteredCards.map((card, index) => (
             <div className="mx-4 flex flex-wrap" key={index}> 
@@ -99,6 +108,7 @@ const Marketplace = () => {
                 price={card.price}
                 description={card.description}
                 type={card.type}
+                onActionClick={() => handleOpenBuyBarterModal({ type: card.type, name: card.name, price: card.price })} // Pass data to parent
               />
             </div>
           ))}
@@ -109,6 +119,13 @@ const Marketplace = () => {
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <AddListingForm onClose={handleCloseModal} />
         </div>
+      )}
+
+      {isBuyModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <BuyForm transactionType={transactionType} onClose={handleCloseBuyBarterModal}/>
+        </div>
+
       )}
     </div>
   );
