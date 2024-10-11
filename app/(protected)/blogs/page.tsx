@@ -35,7 +35,7 @@ export default async function Blogs() {
       blogId: 2,
       image: "/images/blog-2.jpg",
       title: "From Seed to Harvest: My Journey to an Abundant Crop!",
-      commentsNo: 15,
+      commentsNo: 8,
       likesNo: 34,
       description:
         "What started as a simple hobby has blossomed into a rewarding experience with an amazing harvest. In this post, I'll share how I transformed a few seeds into a thriving garden, the steps I took to boost growth, and the lessons learned along the way. Whether you're looking to grow your own food or simply enjoy the beauty of nature, discover the secrets behind my success and get inspired to cultivate your own fruitful garden.",
@@ -47,7 +47,7 @@ export default async function Blogs() {
       image: "/images/blog-3.jpeg",
       title:
         "My Best Harvest Yet: How I Achieved a Garden Overflowing with Produce!",
-      commentsNo: 15,
+      commentsNo: 7,
       likesNo: 23,
       description:
         "This season, my garden surpassed all expectations with a truly remarkable yield. I’ll share the strategies that made the difference, from choosing the right plant varieties to using natural fertilizers and optimizing watering schedules. Join me as I recount the highs and lows of the growing season and offer practical tips for anyone looking to boost their garden's productivity and enjoy the rewards of homegrown produce.",
