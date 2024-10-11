@@ -11,7 +11,7 @@ import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 
-interface SidebarProps { 
+interface SidebarProps {
   name: string;
 }
 
@@ -37,7 +37,7 @@ export default function Sidebar({ name }: SidebarProps) {
       path: "/marketplace",
       icon: <Store className="h-5 w-5" />,
     },
-    { name: "Profile", path: "/profile", icon: <User className="h-5 w-5" /> },
+    { name: "Profile", path: "", icon: <User className="h-5 w-5" /> },
   ];
 
   const handleSignOut = async () => {
