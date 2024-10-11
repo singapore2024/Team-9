@@ -69,7 +69,6 @@ export default function BlogCard(props: BlogProps) {
           <DialogDescription className="text-base">
             {props.more}
           </DialogDescription>
-          
         </DialogContent>
       </Dialog>
     </div>
