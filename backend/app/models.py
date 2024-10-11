@@ -14,6 +14,7 @@ class Listing(Base):
     type = Column(String)
     price = Column(String)
     unit = Column(String, default="kg")
+    filepath = Column(String)
     created_at = Column(DateTime, default=datetime.utcnow)
     owner_id = Column(Integer, ForeignKey("users.id"))
     owner = relationship("User", back_populates="listings")
