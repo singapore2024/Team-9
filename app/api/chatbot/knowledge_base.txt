@@ -1,0 +1,100 @@
+
+Marketplace Knowledge Base
+
+1. Account Setup
+
+Creating an Account:
+
+- Steps:
+  1. Click on the 'Sign Up' button on the homepage.
+  2. Fill in your personal details, including name, email, and contact information.
+  3. Complete the registration by creating a password.
+  
+- Verification:
+  - After signing up, you will receive an email to verify your account. Click on the link in the email to activate your account.
+
+Accessing Your Account:
+
+- After account creation, log in by clicking 'Log In' on the homepage.
+- Enter your email and password.
+- If you forget your password, use the 'Forgot Password' link to reset it by following the instructions sent to your email.
+
+
+2. How to Get Started
+
+- Navigation:
+  - Log in and click on the blogs tab.
+  - Click on the Starter Guide under the blogs page to get started.
+
+- Details:
+  - The starter guide will help you understand how to become a farmer, even from your own home.
+  - You can also see what other farmers near you are doing with their starter kits.
+
+
+3. Posting a Blog
+
+Navigation:
+
+- Log in and click on the blogs tab on your sidebar.
+- Then click on the 'Post a Blog' button.
+
+Details Required:
+
+- Title: Enter a catchy title for your blog post.
+- Description: Write a detailed description of your blog post.
+- Images: Upload relevant images to accompany your blog post.
+- Content: Write the main content of your blog post.
+- Publish: Click on the publish button to make your blog post live.
+
+
+4. Selling on the Marketplace
+
+- Creating a Listing:
+  - Navigate to the Marketplace tab.
+  - Click on 'Create Listing'.
+  - Enter the details of your produce, including the type, quantity, price, and any additional information.
+  - You can also upload images to showcase your produce.
+  - Click on 'Submit' to publish your listing on the Marketplace.
+
+- Managing Your Listings:
+  - View all your active listings under 'My Listings' in your dashboard.
+  - Edit or delete listings as needed to keep your inventory up to date.
+
+
+5. Sending an Offer on a Barter Trade
+
+- Navigating to the Offer Page:
+  - Go to the listing you are interested in and click on 'Make an Offer'.
+
+- Sending an Offer:
+  - Specify the quantity and type of produce you would like to offer in exchange.
+  - Write a message to the seller explaining your offer.
+  - Click 'Submit Offer' to send your offer.
+
+- Reviewing Offers:
+  - You can view the status of your offers in your 'Offers' section.
+  - Accepted offers will allow you to proceed with the barter, and rejected offers will display with a message from the seller.
+
+
+6. Using the Dashboard
+
+- Access your dashboard by clicking on the 'Dashboard' button in the top navigation bar.
+
+- From the dashboard, you can:
+  - View and data and analytics related to the marketplace.
+
+
+7. Exploring "The Box" Starter Kit
+
+- "The Box" is a specially curated starter kit for anyone looking to begin their farming journey at home or in a small space.
+
+- Contents of "The Box":
+  - Seeds for various herbs, vegetables, or fruits.
+  - Nutrient-rich soil and compost.
+  - Easy-to-use gardening tools.
+  - Step-by-step guide to help you get started with planting and growing.
+
+- Benefits:
+  - Perfect for beginners and experts alike.
+  - Sustainable way to grow fresh produce at home.
+  - Access to the exclusive "Box Community" to share progress, ask questions, and get advice from fellow growers.

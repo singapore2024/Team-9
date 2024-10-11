@@ -4,14 +4,12 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import Header from "@/components/Header";
 import Image from "next/image";
+import { ChatbotLauncher } from "@/components/ChatbotLauncher"; // Ensure the correct path
 import { auth } from "@/auth";
 import { signOut } from "@/auth";
 
 export default async function Home() {
   const router = useRouter();
-  
- 
-    
 
   return (
     <div className="bg-gray-100 min-h-screen">
@@ -61,8 +59,9 @@ export default async function Home() {
         </p>
         <Image src="/images/about.png" alt="About Us" width={600} height={400} className="mx-auto rounded-lg shadow-lg" />
       </section>
-   </div>
-  )
+
+      {/* Chatbot Launcher Button */}
+      <ChatbotLauncher />
+    </div>
+  );
 }
-
-
