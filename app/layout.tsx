@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { SessionProvider } from "next-auth/react";
 import localFont from "next/font/local";
 import "./globals.css";
-import { SessionProvider } from "next-auth/react";
 import { ChatbotLauncher } from "@/components/ChatbotLauncher";
 
 
