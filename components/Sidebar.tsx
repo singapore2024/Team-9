@@ -1,9 +1,15 @@
 "use client";
 
+import {
+  ChartNoAxesCombined,
+  LogOut,
+  MessageCircleMore,
+  Store,
+  User,
+} from "lucide-react";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
-import { Activity, ChartNoAxesCombined, User, LogOut, Store, MessageCircleMore } from "lucide-react";
-import React, { useState } from "react";
+import { useState } from "react";
 
 export default function Sidebar() {
   const pathname = usePathname();
@@ -12,10 +18,22 @@ export default function Sidebar() {
 
   // Define your sidebar items directly here
   const sidebarItems = [
-    { name: "Dashboard", path: "/dashboard", icon: <ChartNoAxesCombined className="h-5 w-5" /> },
-    { name: "Blogs", path: "/blogs", icon: <MessageCircleMore className="h-5 w-5" /> },
-    { name: "Marketplace", path: "/marketplace", icon: <Store className="h-5 w-5" /> },
-    { name: "Profile", path: "/profile", icon: <User className="h-5 w-5" /> }
+    {
+      name: "Dashboard",
+      path: "/dashboard",
+      icon: <ChartNoAxesCombined className="h-5 w-5" />,
+    },
+    {
+      name: "Blogs",
+      path: "/blogs",
+      icon: <MessageCircleMore className="h-5 w-5" />,
+    },
+    {
+      name: "Marketplace",
+      path: "/marketplace",
+      icon: <Store className="h-5 w-5" />,
+    },
+    { name: "Profile", path: "/profile", icon: <User className="h-5 w-5" /> },
   ];
 
   const handleSignOut = async () => {
@@ -60,10 +78,22 @@ export default function Sidebar() {
             } hover:bg-blue-950`}
             onClick={() => router.push(item.path)}
           >
-            <span className={`${item.path === pathname ? "text-white" : "text-blue-950 group-hover:text-white"}`}>
+            <span
+              className={`${
+                item.path === pathname
+                  ? "text-white"
+                  : "text-blue-950 group-hover:text-white"
+              }`}
+            >
               {item.icon}
             </span>
-            <span className={`${item.path === pathname ? "text-white" : "text-blue-950 group-hover:text-white"}`}>
+            <span
+              className={`${
+                item.path === pathname
+                  ? "text-white"
+                  : "text-blue-950 group-hover:text-white"
+              }`}
+            >
               {item.name}
             </span>
           </div>
@@ -72,12 +102,26 @@ export default function Sidebar() {
         {/* Sign Out Button */}
         <div
           className={`group flex cursor-pointer items-center gap-3 rounded-lg p-3 transition-colors ${
-            isSigningOut ? "cursor-wait bg-red-600" : "bg-white hover:bg-red-600"
+            isSigningOut
+              ? "cursor-wait bg-red-600"
+              : "bg-white hover:bg-red-600"
           }`}
           onClick={handleSignOut}
         >
-          <LogOut className={`h-5 w-5 ${isSigningOut ? "text-white" : "text-red-600 group-hover:text-white"}`} />
-          <span className={`${isSigningOut ? "text-white" : "text-red-600 group-hover:text-white"}`}>
+          <LogOut
+            className={`h-5 w-5 ${
+              isSigningOut
+                ? "text-white"
+                : "text-red-600 group-hover:text-white"
+            }`}
+          />
+          <span
+            className={`${
+              isSigningOut
+                ? "text-white"
+                : "text-red-600 group-hover:text-white"
+            }`}
+          >
             {isSigningOut ? "Signing Out..." : "Sign Out"}
           </span>
         </div>
@@ -85,4 +129,3 @@ export default function Sidebar() {
     </div>
   );
 }
-
