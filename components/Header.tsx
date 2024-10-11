@@ -29,7 +29,7 @@ function Navbar() {
             Blogs
           </a>
           <a
-            href="/marketplace"
+            href="/marketplace-unauth"
             className="text-gray-700 hover:text-blue-600 cursor-pointer"
           >
             Marketplace

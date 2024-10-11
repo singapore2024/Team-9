@@ -6,6 +6,7 @@ import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import AddListingForm from '@/components/AddListingForm';
 import { CardWithForm } from '@/pages/market';
 import BuyForm from '@/components/BuyForm';
+import Header  from '@/components/Header';
 
 const Marketplace = () => {
   const [view, setView] = useState<'barter' | 'buy'>('barter');
@@ -91,10 +92,7 @@ const Marketplace = () => {
       {/* Search Bar and Add Listings Button */}
       <div className="flex items-center mb-6 space-x-4">
         <Input type="text" placeholder="Search listings..." className="flex-1" />
-        
-        <Button className="bg-green-900 text-white px-4 py-2 rounded-md" onClick={handleOpenModal}>
-          Add Listing
-        </Button>
+  
       </div>
       
       {/* Cards */}

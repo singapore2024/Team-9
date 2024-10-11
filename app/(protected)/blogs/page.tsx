@@ -77,6 +77,7 @@ export default async function Blogs() {
 
   return (
     <div className="bg-gray-100 min-h-screen">
+
       {/** Stories dialog */}
       <Dialog defaultOpen={true}>
         <DialogContent className="w-fit">
@@ -111,6 +112,7 @@ export default async function Blogs() {
         </DialogContent>
       </Dialog>
       {/** Starter Kit dialog */}
+
       <Dialog defaultOpen={true}>
         <DialogContent className="max-h-[80vh] overflow-y-auto max-w-screen-xl">
           <DialogHeader>

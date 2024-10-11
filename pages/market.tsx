@@ -33,7 +33,7 @@ export function CardWithForm({
       <CardHeader>
         <div className="relative">
           <img
-            src={imageUrl}
+            src="https://quanfaorganic.com.sg/cdn/shop/products/ketobox_1.jpg?v=1705308414"
             alt={name}
             className="w-full h-[200px] object-cover rounded"
           />
