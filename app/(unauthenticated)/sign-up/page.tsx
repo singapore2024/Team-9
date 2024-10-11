@@ -4,7 +4,9 @@ import { UserAuthForm } from "@/components/Auth";
 
 const page = () => {
   return (
-    <div><UserAuthForm/></div>
+    <div className="flex min-h-screen flex-col items-center justify-center border-black">
+        <UserAuthForm />
+    </div>
   )
 }
 
