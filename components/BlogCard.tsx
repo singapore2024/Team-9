@@ -63,8 +63,13 @@ export default function BlogCard(props: BlogProps) {
             className="mx-auto rounded-lg"
             alt={props.alt}
           />
-          <DialogDescription>{props.description}</DialogDescription>
-          <DialogDescription>{props.more}</DialogDescription>
+          <DialogDescription className="text-base">
+            {props.description}
+          </DialogDescription>
+          <DialogDescription className="text-base">
+            {props.more}
+          </DialogDescription>
+          
         </DialogContent>
       </Dialog>
     </div>
