@@ -14,7 +14,7 @@ function Navbar() {
         {/* Logo */}
         <div className="flex-shrink-0">
           <a href="/" className="flex items-center">
-            <img src="/logo.png" alt="JP Morgan" className="h-8" />
+            <img src="/gdmt.png" alt="Logo" className="h-8" />
           </a>
         </div>
 
@@ -24,13 +24,13 @@ function Navbar() {
           {/* Added ml-8 */}
           <a
             href="/"
-            className="text-gray-700 hover:text-blue-600 cursor-pointer"
+            className="text-gray-700 hover:text-green-600 cursor-pointer"
           >
             Blogs
           </a>
           <a
             href="/marketplace-unauth"
-            className="text-gray-700 hover:text-blue-600 cursor-pointer"
+            className="text-gray-700 hover:text-green-600 cursor-pointer"
           >
             Marketplace
           </a>
@@ -38,12 +38,12 @@ function Navbar() {
 
         {/* Sign In and Sign Up Buttons */}
         <div className="flex items-center space-x-4">
-          <a href="/sign-up" className="text-gray-700 hover:text-blue-600">
+          <a href="/sign-up" className="text-gray-700 hover:text-green-600">
             Sign In
           </a>
           <a
             href="/sign-up"
-            className="bg-blue-900 text-white py-2 px-4 rounded-md hover:bg-orange-700 transition"
+            className="bg-green-900 text-white py-2 px-4 rounded-md hover:bg-orange-700 transition"
           >
             Sign Up
           </a>
@@ -53,7 +53,7 @@ function Navbar() {
       {/* Mobile Menu */}
       <div className="md:hidden flex flex-col px-4 py-4">
         <button
-          className="text-gray-700 hover:text-blue-600 flex items-start py-3"
+          className="text-gray-700 hover:text-green-600 flex items-start py-3"
           onClick={handleClick}
         >
           Menu
@@ -62,13 +62,13 @@ function Navbar() {
           <div className="md:hidden flex flex-col gap-3">
             <a
               href="/"
-              className="text-gray-700 hover:text-blue-600 cursor-pointer"
+              className="text-gray-700 hover:text-green-600 cursor-pointer"
             >
               Blogs
             </a>
             <a
               href="/marketplace"
-              className="text-gray-700 hover:text-blue-600 cursor-pointer"
+              className="text-gray-700 hover:text-green-600 cursor-pointer"
             >
               Marketplace
             </a>
