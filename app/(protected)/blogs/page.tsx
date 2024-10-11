@@ -1,5 +1,13 @@
 import BlogCard from "@/components/BlogCard";
-import Header from "@/components/Header";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+
 import {
   Dialog,
   DialogContent,
@@ -7,6 +15,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+
 import Image from "next/image";
 
 export default async function Blogs() {
@@ -15,6 +24,8 @@ export default async function Blogs() {
       blogId: 1,
       image: "/images/blog-1.jpg",
       title: "My Amazing Homegrown Harvest: How I Achieved a Bountiful Yield!",
+      commentsNo: 15,
+      likesNo: 52,
       description:
         "After months of dedication and learning the art of home gardening, I'm thrilled to share my journey and the incredible results! From tiny seedlings to a flourishing harvest, I'll walk you through the techniques I used, the challenges I faced, and the tips that helped me maximize my yield. Whether you're just starting out or looking to improve your garden's productivity, my story is here to inspire and guide you.",
       alt: "Bountiful garden harvest with fresh vegetables and fruits",
@@ -24,6 +35,8 @@ export default async function Blogs() {
       blogId: 2,
       image: "/images/blog-2.jpg",
       title: "From Seed to Harvest: My Journey to an Abundant Crop!",
+      commentsNo: 8,
+      likesNo: 34,
       description:
         "What started as a simple hobby has blossomed into a rewarding experience with an amazing harvest. In this post, I'll share how I transformed a few seeds into a thriving garden, the steps I took to boost growth, and the lessons learned along the way. Whether you're looking to grow your own food or simply enjoy the beauty of nature, discover the secrets behind my success and get inspired to cultivate your own fruitful garden.",
       alt: "Homegrown garden with a variety of fresh produce",
@@ -34,6 +47,8 @@ export default async function Blogs() {
       image: "/images/blog-3.jpeg",
       title:
         "My Best Harvest Yet: How I Achieved a Garden Overflowing with Produce!",
+      commentsNo: 7,
+      likesNo: 23,
       description:
         "This season, my garden surpassed all expectations with a truly remarkable yield. I’ll share the strategies that made the difference, from choosing the right plant varieties to using natural fertilizers and optimizing watering schedules. Join me as I recount the highs and lows of the growing season and offer practical tips for anyone looking to boost their garden's productivity and enjoy the rewards of homegrown produce.",
       alt: "A bountiful harvest of fresh fruits and vegetables from the garden",
@@ -41,8 +56,63 @@ export default async function Blogs() {
     },
   ];
 
+  const stories = [
+    {
+      src: "/images/story-1.jpeg",
+      description: "Some herbs users have planted!",
+    },
+    {
+      src: "/images/story-2.jpg",
+      description: "Cherry tomatoes!",
+    },
+    {
+      src: "/images/story-3.png",
+      description: "Bell peppers!",
+    },
+    {
+      src: "/images/story-4.png",
+      description: "Cucumbers!",
+    },
+  ];
+
   return (
     <div className="bg-gray-100 min-h-screen">
+
+      {/** Stories dialog */}
+      <Dialog defaultOpen={true}>
+        <DialogContent className="w-fit">
+          <DialogHeader>
+            <DialogTitle>See what we've been growing!</DialogTitle>
+          </DialogHeader>
+          <div className="flex flex-row w-fit">
+            <Carousel className="w-full max-w-xs">
+              <CarouselContent>
+                {stories.map((item, index) => (
+                  <CarouselItem key={index}>
+                    <div className="p-1">
+                      <Card>
+                        <CardContent className="flex flex-col gap-5 py-5">
+                          <Image
+                            src={item.src}
+                            width={400}
+                            height={300}
+                            alt="story"
+                          ></Image>
+                          <p className="text-center">{item.description}</p>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
+          </div>
+        </DialogContent>
+      </Dialog>
+      {/** Starter Kit dialog */}
+
       <Dialog defaultOpen={true}>
         <DialogContent className="max-h-[80vh] overflow-y-auto max-w-screen-xl">
           <DialogHeader>
@@ -55,11 +125,11 @@ export default async function Blogs() {
               src="/images/starter-kit.jpg"
               width={400}
               height={300}
-              alt=""
+              alt="starter-kit"
             />
           </div>
           <h3>About the Kit</h3>
-          <DialogDescription>
+          <DialogDescription className="text-base">
             Our starter kit has everything you need to embark on your
             plant-growing adventure, even if you’ve never touched a plant
             before. It includes a curated selection of seeds, nutrient-rich
@@ -70,7 +140,7 @@ export default async function Blogs() {
             start a garden, this kit has you covered.
           </DialogDescription>
           <h3>Consistency is Key</h3>
-          <DialogDescription>
+          <DialogDescription className="text-base">
             When it comes to growing plants, regular care is crucial. That’s why
             we’ve designed the kit with a simple yet effective watering and
             maintenance schedule that anyone can follow. By sticking to these
@@ -81,7 +151,7 @@ export default async function Blogs() {
             how rewarding plant care can be!
           </DialogDescription>
           <h3>Become a Certified Farmer</h3>
-          <DialogDescription>
+          <DialogDescription className="text-base">
             This kit isn’t just about growing plants—it's about growing your
             skills as a budding gardener. By following the instructions and
             getting hands-on experience, you'll build a deeper understanding of
@@ -92,12 +162,13 @@ export default async function Blogs() {
             the future, laying the foundation to become a successful farmer.
           </DialogDescription>
           <div className="flex justify-center">
-            <button className="bg-green-800 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-green-600 hover:shadow-lg transition duration-300 w-80">
+            <button className="bg-green-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-green-600 hover:shadow-lg transition duration-300 w-80">
               Buy it now!
             </button>
           </div>
         </DialogContent>
       </Dialog>
+      {/** Blogs */}
       <div className="py-8 px-8 rounded-sm">
         {blogPosts.map((item) => (
           <BlogCard
@@ -107,6 +178,8 @@ export default async function Blogs() {
             description={item.description}
             more={item.more}
             alt={item.alt}
+            commentsNo={item.commentsNo}
+            likesNo={item.likesNo}
           ></BlogCard>
         ))}
       </div>

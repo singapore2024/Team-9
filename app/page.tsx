@@ -1,9 +1,6 @@
 import BlogCard from "@/components/BlogCard";
-import Header from "@/components/Header";
-import Image from "next/image";
 import { ChatbotLauncher } from "@/components/ChatbotLauncher"; // Ensure the correct path
-import { auth } from "@/auth";
-import { signOut } from "@/auth";
+import Header from "@/components/Header";
 
 export default async function Home() {
   // const router = useRouter();
@@ -27,6 +24,8 @@ export default async function Home() {
       blogId: 1,
       image: "/images/blog-1.jpg",
       title: "My Amazing Homegrown Harvest: How I Achieved a Bountiful Yield!",
+      commentsNo: 15,
+      likesNo: 52,
       description:
         "After months of dedication and learning the art of home gardening, I'm thrilled to share my journey and the incredible results! From tiny seedlings to a flourishing harvest, I'll walk you through the techniques I used, the challenges I faced, and the tips that helped me maximize my yield. Whether you're just starting out or looking to improve your garden's productivity, my story is here to inspire and guide you.",
       alt: "Bountiful garden harvest with fresh vegetables and fruits",
@@ -36,6 +35,8 @@ export default async function Home() {
       blogId: 2,
       image: "/images/blog-2.jpg",
       title: "From Seed to Harvest: My Journey to an Abundant Crop!",
+      commentsNo: 15,
+      likesNo: 34,
       description:
         "What started as a simple hobby has blossomed into a rewarding experience with an amazing harvest. In this post, I'll share how I transformed a few seeds into a thriving garden, the steps I took to boost growth, and the lessons learned along the way. Whether you're looking to grow your own food or simply enjoy the beauty of nature, discover the secrets behind my success and get inspired to cultivate your own fruitful garden.",
       alt: "Homegrown garden with a variety of fresh produce",
@@ -46,6 +47,8 @@ export default async function Home() {
       image: "/images/blog-3.jpeg",
       title:
         "My Best Harvest Yet: How I Achieved a Garden Overflowing with Produce!",
+      commentsNo: 15,
+      likesNo: 23,
       description:
         "This season, my garden surpassed all expectations with a truly remarkable yield. I’ll share the strategies that made the difference, from choosing the right plant varieties to using natural fertilizers and optimizing watering schedules. Join me as I recount the highs and lows of the growing season and offer practical tips for anyone looking to boost their garden's productivity and enjoy the rewards of homegrown produce.",
       alt: "A bountiful harvest of fresh fruits and vegetables from the garden",
@@ -65,6 +68,8 @@ export default async function Home() {
             description={item.description}
             more={item.more}
             alt={item.alt}
+            commentsNo={item.commentsNo}
+            likesNo={item.likesNo}
           ></BlogCard>
         ))}
       </div>
