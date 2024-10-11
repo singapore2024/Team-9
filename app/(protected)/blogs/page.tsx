@@ -1,5 +1,13 @@
 import BlogCard from "@/components/BlogCard";
 import Header from "@/components/Header";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import Image from "next/image";
 
 export default async function Blogs() {
   const blogPosts = [
@@ -36,6 +44,61 @@ export default async function Blogs() {
   return (
     <div className="bg-gray-100 min-h-screen">
       <Header />
+      <Dialog defaultOpen={true}>
+        <DialogContent className="max-h-[80vh] overflow-y-auto max-w-screen-xl">
+          <DialogHeader>
+            <DialogTitle>
+              Grow Your Green Thumb: The Perfect Starter Kit for Beginners!
+            </DialogTitle>
+          </DialogHeader>
+          <div className="flex justify-center">
+            <Image
+              src="/images/starter-kit.jpg"
+              width={400}
+              height={300}
+              alt=""
+            />
+          </div>
+          <h3>About the Kit</h3>
+          <DialogDescription>
+            Our starter kit has everything you need to embark on your
+            plant-growing adventure, even if you’ve never touched a plant
+            before. It includes a curated selection of seeds, nutrient-rich
+            soil, eco-friendly pots, and essential tools for planting and
+            maintenance. The step-by-step guide ensures you know exactly what to
+            do at every stage, making it easy and fun to start growing right
+            away. Whether you're looking to add some greenery to your home or
+            start a garden, this kit has you covered.
+          </DialogDescription>
+          <h3>Consistency is Key</h3>
+          <DialogDescription>
+            When it comes to growing plants, regular care is crucial. That’s why
+            we’ve designed the kit with a simple yet effective watering and
+            maintenance schedule that anyone can follow. By sticking to these
+            routines, you’ll be helping your plants grow healthy and strong.
+            Consistent watering, proper sunlight exposure, and occasional
+            feeding are essential habits that will set you up for long-term
+            success. With a little bit of daily attention, you’ll soon see just
+            how rewarding plant care can be!
+          </DialogDescription>
+          <h3>Become a Certified Farmer</h3>
+          <DialogDescription>
+            This kit isn’t just about growing plants—it's about growing your
+            skills as a budding gardener. By following the instructions and
+            getting hands-on experience, you'll build a deeper understanding of
+            what it takes to care for different types of plants. As you gain
+            confidence and see your plants flourish, you'll feel like a
+            certified plant expert. The more you practice, the more you'll
+            develop the skills needed to take on bigger gardening projects in
+            the future, laying the foundation to become a successful farmer.
+          </DialogDescription>
+          <div className="flex justify-center">
+            <button className="bg-green-800 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-green-600 hover:shadow-lg transition duration-300 w-80">
+              Buy it now!
+            </button>
+          </div>
+        </DialogContent>
+      </Dialog>
       <div className="py-8 px-8 rounded-sm">
         {blogPosts.map((item) => (
           <BlogCard
