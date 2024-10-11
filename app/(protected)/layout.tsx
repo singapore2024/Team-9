@@ -12,12 +12,14 @@ export default async function ProtectedLayout({
     redirect("/sign-up");
   }
 
+  const name = session?.user?.name
+
   return (
     <main className="min-h-screen bg-white text-black">
       {/* Flex layout for responsiveness */}
       <div className="flex flex-col md:flex-row">
         <div className="w-full md:w-64 flex-shrink-0">
-          <Sidebar />
+          <Sidebar name={name}/>
         </div>
         <div className="flex-1 p-4 overflow-auto">
           {children}

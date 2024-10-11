@@ -140,7 +140,7 @@ const AddListingForm: React.FC<AddListingFormProps> = ({ onClose }) => {
 
           {formData.listingType === 'sell' && (
             <div>
-              <Label htmlFor="price">Price</Label>
+              <Label htmlFor="price">Price (SGD)</Label>
               <Input id="price" type="number" placeholder="Price" min="0" step="0.01" onChange={handleInputChange} />
               {errors.price && <p className="text-red-600">{errors.price}</p>}
             </div>
@@ -162,7 +162,7 @@ const AddListingForm: React.FC<AddListingFormProps> = ({ onClose }) => {
             <Input id="image" type="file" accept="image/*" onChange={handleImageChange} />
           </div>
           
-          <Button type="submit" className="w-full bg-blue-950 text-white">Submit Listing</Button>
+          <Button type="submit" className="w-full bg-green-900 text-white">Submit Listing</Button>
         </div>
       </form>
     </div>
